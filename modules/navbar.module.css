@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.navbar{
+    position: absolute;
+    width: 100%;
+    transform: scale(1.01);
+    height: 10%;
+    background-color: #000000af;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    animation: fadeUp 1.5s ease-out;
+}
+
+
+.navbar::after{
+    display: block;
+    content: "";
+    top: 0.1%;
+    position: absolute;
+    width: 99.5%;
+    height: 90%;
+    transform: translateZ(-1px);
+    background-color: #B66136;
+    border: 5px inset #000;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    --dotSize: 0.08rem;
+    --bgSize: 1.2rem;
+    --bgPosition: calc(var(--bgSize) / 2);
+    background-image: radial-gradient(
+        circle at center,
+        black var(--dotSize),
+        transparent 0
+        ), radial-gradient(circle at center, black var(--dotSize), transparent 0);
+    background-size: var(--bgSize) var(--bgSize);
+    background-position: 0 0, var(--bgPosition) var(--bgPosition);
+    mask-image: linear-gradient(rgb(0 0 0), rgb(0 0 0 / 0));
+    border-image: fill 0 linear-gradient(#0003, #000000b0);
+}
+
+.logo{
+    object-fit: contain;
+    width: 70px;
+    transition: transform 1s ease;
+}
+
+.logo:hover{
+    transform: scale(2) translate(20px, 15px);
+}
+
+.pages{
+    text-decoration: none;
+    color: white;
+    font-size: clamp(1rem, 1.5vw, 2vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+    transition: transform .7s ease-out;
+    animation: appear 5s ease;
+}
+
+.pages:hover{
+    transform: scale(1.1);
+}
+
+.pages label{
+    cursor: pointer;
+}
+
+.pages::after{
+    display: block;
+    content: "";
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width .7s ease-out;
+}
+
+.pages:hover::after{
+    width: 95%;
+}
+
+.searchbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: clamp(1rem, 1.5vw, 2vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+    gap: 5px;
+    animation: appear 5s ease;
+}
+
+.searchbox input{
+    outline: none;
+    font-family: "Bangers", system-ui;
+    font-size: clamp(.8rem, 1vw, 1.5vw);
+    width: 70%;
+    transition: transform .7s ease-out;
+}
+
+.searchbox input:focus{
+    transform: scale(1.15);
+}
+
+.inputbox{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.inputbox button{
+    width: 20%;
+    height: 25px;
+    background-color: #B66136;
+    background-image: url("../src/assets/send.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.inputbox button:hover{
+    transform: scale(1.1);
+}
+
+.inputbox button:active{
+    transform: scale(1);
+}
+
+@keyframes fadeUp {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0%)
+    }
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar{
+        height: 15%;
+    }
+    .pages, .searchbox{
+        text-align: center;
+        padding: 5px;
+    }
+    
+}

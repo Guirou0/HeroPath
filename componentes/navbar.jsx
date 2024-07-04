@@ -1,0 +1,38 @@
+import { useState } from "react";
+import styles from '../modules/navbar.module.css';
+
+import { Link } from "react-router-dom";
+
+const Navbar = () => {
+    const [search, setSearch] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("hi")
+    }
+
+    return (
+        <div className={styles.navbar}>
+           <img alt="Logo" src="./src/assets/logo.png" className={styles.logo}/>
+           <Link to="/home" className={styles.pages}>
+                <label>Página inicial</label>
+           </Link>
+           <Link to="/discover" className={styles.pages}>
+                <label>Descubra novos heróis</label>
+           </Link>
+           <Link to="/compare" className={styles.pages}>
+                <label>Compare seus heróis favoritos</label>
+           </Link>
+           <form className={styles.searchbox} onSubmit={handleSubmit}>
+                <label>Pesquise sobre algum herói ou vilão: </label>
+                <div className={styles.inputbox}>
+                    <input type="text" placeholder={"Digite aqui..."} value={search} onChange={(e) => {setSearch(e.target.value)}} required />
+                    <button type="submit"></button>
+                </div>
+           </form>
+
+        </div>
+    )
+}
+
+export default Navbar
