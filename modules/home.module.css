@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.home{
+    position: absolute;
+    width: 100%;
+    height: 87.5%;
+    bottom: 0%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    gap: 3%;
+}
+
+.info{
+    width: 100%;
+    height: 20%;
+    border: 5px inset #B66136;
+    backdrop-filter: blur(10px);
+    background-color: rgb(0,0,0,0.2);
+    animation: fadeRight 2s linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+    animation: appear 4s linear;
+}
+
+.info h1{
+    color: white;
+    font-size: clamp(1.2rem, 2vw, 2.5vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+    animation: fadeLeft 5s ease-out;
+}
+
+.info p{
+    color: white;
+    font-size: clamp(1rem, 1.5vw, 2vw);
+    font-weight: 200;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-align: justify;
+    text-indent: 1.25cm;
+    margin-top: 5px;
+    text-align: center;
+    margin-left: -50px;
+    animation: fadeRight 5s ease-out;
+}
+
+.herocontainer{
+    width: 100%;
+    height: 75%;
+    border: 5px inset #B66136;
+    display: flex;
+    animation: fadeDown 4s ease-out;
+}
+
+.hero{
+    width: 12.5%;
+    height: 95%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: width 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 3px solid rgb(182, 97, 54);
+    border-radius: 20px;
+    cursor: pointer;
+    animation: appear 5s ease-out;
+}
+
+.name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    font-size: clamp(1.5rem, 3vw, 3.5vw);
+    font-weight: 600;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+    opacity: 0;
+    transition: opacity 1s ease;
+    background-color: rgba(182, 97, 54, 0.4);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+}
+
+.hero:hover{
+    width: 40%;
+}
+
+.hero:hover .name{
+    opacity: 1;
+}
+
+.herocontainer:hover .hero:not(:hover){
+    width: 8.571%;
+}
+
+@keyframes fadeLeft{
+    0%{
+        transform: translateX(-1000%);
+    }
+    66.6666666%{
+        transform: translateX(-1000%);
+    }
+}
+
+@keyframes fadeRight {
+    0%{
+        transform: translateX(100%);
+    }
+    66.6666666%{
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeDown{
+    0%{
+        transform: translateY(100%);
+    }
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+    66.6666666%{
+        opacity: 0;
+    }
+}

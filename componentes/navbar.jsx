@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from '../modules/navbar.module.css';
-
-import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
+    const {key} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("hi")
+        const req = `/search/${search}`;
+        setSearch("");
+        navigate(req);
     }
 
     return (
-        <div className={styles.navbar}>
+         <div className={styles.navbar}>
            <img alt="Logo" src="./src/assets/logo.png" className={styles.logo}/>
            <Link to="/home" className={styles.pages}>
                 <label>Página inicial</label>
@@ -30,7 +34,6 @@ const Navbar = () => {
                     <button type="submit"></button>
                 </div>
            </form>
-
         </div>
     )
 }

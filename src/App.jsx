@@ -3,6 +3,7 @@ import './App.css'
 
 import Navbar from '../componentes/navbar';
 import { Outlet } from 'react-router-dom'
+import {ToastContainer} from 'react-toastify'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,8 @@ function App() {
   return (
     <>
       <Navbar />
-      
+      <Outlet />
+      <ToastContainer />
     </>
   )
 }

@@ -8,6 +8,7 @@ import Home from '../routes/Home.jsx'
 import Discover from '../routes/Discover.jsx'
 import Search from '../routes/Search.jsx'
 import Compare from '../routes/Compare.jsx'
+import Hero from '../routes/Hero.jsx'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/compare",
         element: <Compare />,
+      },
+      {
+        path: "/hero/:id",
+        element: <Hero />
       },
     ],
   },
