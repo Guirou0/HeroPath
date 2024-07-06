@@ -18,7 +18,7 @@ const Status = ({stats}) => {
 
         return (
             <div className={styles.stat}>
-                <div className={styles.name}>
+                <div className={styles.name} style={{textShadow: `2px 2px 3px ${colors[name]}`}}>
                     {name}: {stat}
                 </div>
                 <div className= {styles.bar}>

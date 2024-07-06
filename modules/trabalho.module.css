@@ -1,0 +1,47 @@
+.trabalho {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}
+
+.topics{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    gap: 10px;
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    align-items: center;
+    color: aliceblue;
+}
+
+.topics::after{
+    position: absolute;
+    display: block;
+    content: "";
+    width: 95%;
+    height: 2px;
+    background-color: aliceblue;
+    margin-top: 12%;
+    animation: fade 1.5s ease-out;
+}
+
+.topics label{
+    font-size: clamp(1rem, 3.5vw, 4vw);
+    text-shadow: 2px 2px 3px #B66136;
+}
+
+.topics p{
+    font-size: clamp(1rem, 2vw, 3vw);
+}
+
+@keyframes fade {
+    0%{
+        width: 0%;
+    }  
+}

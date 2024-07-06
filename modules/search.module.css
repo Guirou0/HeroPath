@@ -1,0 +1,104 @@
+.search{
+    position: absolute;
+    width: 100%;
+    height: 87.5%;
+    bottom: 0%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    padding: 1%;
+    background-color: rgb(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    border-top: 5px inset #B66136;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.search::-webkit-scrollbar{
+    width: 10px;
+}
+
+.search::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    border: 2px solid #000;
+    background-color: #B66136;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    border: 5px inset #B66136;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .6s ease-out;
+}
+
+.name{
+    width: 90%;
+    height: 90%;
+    background-color: rgb(182, 97, 54, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.5rem, 4vw, 5vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity .4s linear;
+}
+
+.content:hover{
+    transform: scaleY(1.3);
+}
+
+.content:hover .name{
+    opacity: 1;
+}
+
+.loading{
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #B66136;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 2s linear infinite;
+}
+
+.nf{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: clamp(1.5rem, 4vw, 5vw);
+    font-weight: 400;
+    color: white;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+    transform: translate(-50%, -50%);
+
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+@media only screen and (max-width: 700px) {
+    .search{
+        height: 83.5%;
+    }
+}

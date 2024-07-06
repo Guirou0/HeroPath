@@ -14,10 +14,10 @@ const Biografia = ({bio}) => {
                 <label>Nome completo: </label> <p>{bio['full-name']}</p>
             </div>
             <div className={styles.topics}>
-                <label>Alter Egos: </label> <p>{bio['alter-egos']=="No alter egos found."? "Nenhum alter ego encontrado": bio['alter-egos']}</p>
+                <label>Alter Egos: </label> <p style={{fontSize: "clamp(.8rem, 1.3vw, 2.5vw)"}}>{bio['alter-egos']=="No alter egos found."? "Nenhum alter ego encontrado": bio['alter-egos']}</p>
             </div>
             <div className={styles.topics}>
-                <label>Apelidos: </label> <p>{bio['aliases'].toString()}</p>
+                <label>Apelidos: </label> <p style={{fontSize: "clamp(.8rem, 1.3vw, 2.5vw)"}}>{bio['aliases'].toString()}</p>
             </div>
             <div className={styles.topics}>
                 <label>Lugar de nascimento: </label> <p>{bio['place-of-birth']=="-"? "Desconhecido": bio['place-of-birth']}</p>

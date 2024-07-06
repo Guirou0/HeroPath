@@ -7,6 +7,8 @@ import axios from 'axios'
 import Status from '../componentes/Status.jsx'
 import Biografia from '../componentes/Biografia.jsx';
 import Aparencia from '../componentes/Aparencia.jsx';
+import Trabalho from "../componentes/Trabalho.jsx";
+import Conexoes from "../componentes/Conexoes.jsx";
 
 const Hero = () => {
     const {key} = useContext(AuthContext);
@@ -51,7 +53,9 @@ const Hero = () => {
         const nav = {
             "Status": <Status stats={hero.powerstats} />,
             "Biografia": <Biografia bio={hero.biography} />,
-            "Aparencia": <Aparencia apar={hero.appearance} />
+            "Aparencia": <Aparencia apar={hero.appearance} />,
+            "Trabalho": <Trabalho work={hero.work} />,
+            "Conexoes": <Conexoes conec={hero.connections} />
         }
         return nav[page]
     }
