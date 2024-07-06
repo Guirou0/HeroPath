@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.hero{
+    position: absolute;
+    width: 100%;
+    height: 87.5%;
+    bottom: 0%;
+    display: flex;
+    padding: 1%;
+    gap: 1%;
+}
+
+.image{
+    border: 5px inset #B66136;
+    width: 40%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: clamp(1.5rem, 4vw, 5vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+    animation: fadeLeft 2s linear;
+}
+
+.image label {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(182, 97, 54, 0.501);
+    opacity: 0;
+    backdrop-filter: blur(3px);
+    transition: opacity .6s ease-out;
+}
+
+.image:hover label{
+    opacity: 1;
+}
+
+.info{
+    width: 60%;
+    border: 5px inset #B66136;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    animation: fadeRight 2s linear;
+}
+
+.name{
+    width: 100%;
+    height: 15%;
+    background-color: rgba(10, 10, 10, 0.4);
+    box-shadow: 2px 5px 10px #B66136;
+    border-bottom: 2px solid #B66136;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: clamp(1.5rem, 4vw, 5vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+}
+
+.pagination{
+    width: 100%;
+    height: 10%;
+    margin-top: 2px;
+    border-bottom: 1px solid #B66136;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.page{
+    height: 100%;
+    width: 20%;
+    background: none;
+    color: white;
+    font-size: clamp(0.8rem, 2vw, 5vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    cursor: pointer;
+    border: none;
+    transition: transform .3s linear;
+}
+
+.page:hover{
+    transform: scale(1.2);
+}
+
+.ind{
+    position: absolute;
+    bottom: 74.5%;
+    border-bottom: 5px inset #B66136;
+    width: 20%;
+    height: 100%;
+    transition: left .5s ease-out;
+}
+
+
+@keyframes fadeLeft {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(-100%);
+        opacity: 0;
+    } 
+}
+
+@keyframes fadeRight {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}

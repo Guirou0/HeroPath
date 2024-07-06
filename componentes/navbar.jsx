@@ -16,7 +16,8 @@ const Navbar = () => {
     }
 
     return (
-         <div className={styles.navbar}>
+        key && 
+          <div className={styles.navbar}>
            <img alt="Logo" src="./src/assets/logo.png" className={styles.logo}/>
            <Link to="/home" className={styles.pages}>
                 <label>Página inicial</label>
@@ -35,7 +36,7 @@ const Navbar = () => {
                 </div>
            </form>
         </div>
-    )
+    )   
 }
 
 export default Navbar

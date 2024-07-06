@@ -37,7 +37,7 @@
 
 .info p{
     color: white;
-    font-size: clamp(1rem, 1.5vw, 2vw);
+    font-size: clamp(0.8rem, 1.5vw, 2vw);
     font-weight: 200;
     font-family: "Bangers", system-ui;
     font-style: normal;
@@ -134,5 +134,20 @@
     }
     66.6666666%{
         opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .home {
+        height: 83.5%;
+    }
+    .info p {
+        margin-left: 0;
+    }
+    .hero:hover{
+        width: 60%;
+    }
+    .herocontainer:hover .hero:not(:hover){
+        width: 5.714%;
     }
 }

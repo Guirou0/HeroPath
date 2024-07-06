@@ -3,7 +3,7 @@
 .auth{
     position: absolute;
     width: 100%;
-    height: 87.5%;
+    height: 95%;
     bottom: 0%;
     display: flex;
     align-items: center;
@@ -77,7 +77,7 @@
     transform: translateX(-25%);
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .keyform input{
@@ -114,6 +114,14 @@
 
 .keyform button:active{
     transform: scale(1);
+    animation: submit 1s linear;
+}
+
+
+@keyframes submit{
+    100%{
+       background-position-x: 100px;
+    }
 }
 
 @keyframes fadeLeft{
