@@ -53,9 +53,6 @@
     transition: transform 1.5s ease-out, opacity 1.5s ease-out;
 }
 
-.slide:hover .info{
-    transform: translateY(400%);
-}
 
 .info{
     color: white;
@@ -64,8 +61,9 @@
     font-family: "Bangers", system-ui;
     font-style: normal;
     text-shadow: 2px 2px 3px #B66136;
-    transform: translateY(1000%);
+    transform: translateY(400%);
     transition: transform .5s linear;
+    animation: fadeUp2 2.5s linear;
 }
 
 .info::after{
@@ -97,6 +95,16 @@
         transform: translateY(6%);
     }
 }
+
+@keyframes fadeUp2 {
+    0%{
+        transform: translateY(1000%);
+    }
+    100%{
+        transform: translateY(400%);
+    }
+}
+
 @keyframes grow {
     0%{
         height: 0%;

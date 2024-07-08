@@ -71,7 +71,7 @@ const Discover = () => {
         
         return (
             <div className={styles.slide} style={{backgroundImage: `url(${hero.url})`, transform: `scaleX(${i==3? 1.3: 0.8 })`, cursor: `${i==3? "pointer": "default"}`}} onClick={() => {if(i==3) navigate(`/hero/${hero.id}`)}}>
-                {i==3? <div className={styles.info}>{hero.name}</div>: <></>}
+                {i==3 && finished? <div className={styles.info}>{hero.name}</div>: <></>}
             </div>
         )
     }
