@@ -1,0 +1,120 @@
+.discover{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 87.5%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 5px inset #B66136;
+}
+
+.roll{
+    width: 270px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #B66136;
+    color: white;
+    font-size: clamp(1.5rem, 2vw, 3vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    animation: pulse 1.15s linear infinite;
+}
+
+.slides{
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    animation: grow .2s linear;
+}
+
+.slide{
+    width: 480px;
+    height: 550px;
+    border-radius: 10px;
+    border: 3px solid #B66136;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transform: scale(1);
+    animation: appear 1.5s ease-out;
+    transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+}
+
+.slide:hover .info{
+    transform: translateY(400%);
+}
+
+.info{
+    color: white;
+    font-size: clamp(1.5rem, 3vw, 3.5vw);
+    font-weight: 400;
+    font-family: "Bangers", system-ui;
+    font-style: normal;
+    text-shadow: 2px 2px 3px #B66136;
+    transform: translateY(1000%);
+    transition: transform .5s linear;
+}
+
+.info::after{
+    display: block;
+    content: "";
+    height: 100%;
+    height: 2px;
+    background-color: #B66136;
+}
+
+.finish{
+    width: 650px;
+    height: 570px;
+    border: 10px dashed #B66136;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(6%);
+    animation: fadeUp 2.5s linear;
+}
+
+@keyframes fadeUp {
+    0%{
+        transform: translateY(150%);
+    }
+    50%{
+        transform: translateY(150%);
+    }
+    100%{
+        transform: translateY(6%);
+    }
+}
+@keyframes grow {
+    0%{
+        height: 0%;
+    }
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes pulse {
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

@@ -22,7 +22,7 @@ const Hero = () => {
             navigate("/");
         }
 
-        axios.get(`http://localhost:?param=${id}`, {
+        axios.get(`http://localhost:3000?param=${id}`, {
             headers: {
                 key: key
             }

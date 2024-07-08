@@ -33,7 +33,7 @@ const Home = () => {
         }
         const heroes = randomheroes(8)
         const promises = heroes.map((hero) => {
-            return axios.get(`http://localhost:/image?param=${hero}`, {
+            return axios.get(`http://localhost:3000/image?param=${hero}`, {
                 headers : {
                     key: key
                 }
@@ -61,8 +61,8 @@ const Home = () => {
                    também pode comparar dois heróis de seu interesse. </p>
             </div>
             <div className={styles.herocontainer}>
-                {herobar.map((hero) => {
-                    return <Slide hero={hero} />
+                {herobar.map((hero, i) => {
+                    return <Slide key={i} hero={hero} />
                 })}
             </div>
         </div>
