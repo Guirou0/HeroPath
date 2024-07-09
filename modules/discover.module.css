@@ -18,12 +18,13 @@
     border-radius: 10px;
     background-color: #B66136;
     color: white;
-    font-size: clamp(1.5rem, 2vw, 3vw);
+    font-size: clamp(1.5rem, 1.5vw, 3vw);
     font-weight: 400;
     font-family: "Bangers", system-ui;
     font-style: normal;
     text-shadow: 2px 2px 3px rgb(0, 0, 0);
-    animation: pulse 1.15s linear infinite;
+    animation: pulse 1.15s linear infinite, grow 1s linear;
+    overflow: hidden;
 }
 
 .slides{
@@ -124,5 +125,23 @@
     }
     100%{
         transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .discover{
+        height: 83.5%;
+    }
+    .slides{
+        height: 400px;
+    }
+    .slide{
+        width: 200px;
+        height: 300px;
+    }
+    .finish{
+        width: 290px;
+        height: 340px;
+        transform: translateY(9%);
     }
 }
