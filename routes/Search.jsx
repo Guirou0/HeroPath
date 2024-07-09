@@ -17,7 +17,7 @@ const Search = () => {
             navigate("/");
         }
         setResults(null)
-        axios.get(`http://localhost:3000/search?param=${name}`, {
+        axios.get(`http://localhost:/search?param=${name}`, {
             headers: {
                 key: key
             }

@@ -33,7 +33,7 @@ const Home = () => {
         }
         const heroes = randomheroes(8)
         const promises = heroes.map((hero) => {
-            return axios.get(`http://localhost:3000/image?param=${hero}`, {
+            return axios.get(`http://localhost:/image?param=${hero}`, {
                 headers : {
                     key: key
                 }

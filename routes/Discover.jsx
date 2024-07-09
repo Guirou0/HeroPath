@@ -37,9 +37,10 @@ const Discover = () => {
     const startRoll = async () => {
         setHeroes(null)
         setFinished(false)
+
         const newHeroes = randomheroes(7);
         const promises = newHeroes.map((hero) => {
-            return axios.get(`http://localhost:3000/image?param=${hero}`, {
+            return axios.get(`http://localhost:/image?param=${hero}`, {
                 headers: {
                     key: key
                 }
@@ -55,12 +56,12 @@ const Discover = () => {
                     console.log(nH)
                     i = nH;
                     setHeroes(i);
-                }, 3000)
+                }, 2000)
     
                 setTimeout(() => {
                     clearInterval(interval)
                     setFinished(true)
-                }, 3000*(Math.floor(Math.random()*10)+1))
+                }, 2000*(Math.floor(Math.random()*10)+1))
             
         })
         
@@ -70,7 +71,7 @@ const Discover = () => {
     const RenderHero = ({hero, i}) => {
         
         return (
-            <div className={styles.slide} style={{backgroundImage: `url(${hero.url})`, transform: `scaleX(${i==3? 1.3: 0.8 })`, cursor: `${i==3? "pointer": "default"}`}} onClick={() => {if(i==3) navigate(`/hero/${hero.id}`)}}>
+            <div className={styles.slide} style={{backgroundImage: `url(${hero.url})`, transform: `scaleX(${i==3? 1.3: 0.8 })`, cursor: `${i==3 && finished? "pointer": "default"}`, opacity: `${i==3? 1: 0.4}`}} onClick={() => {if(i==3 && finished) navigate(`/hero/${hero.id}`)}}>
                 {i==3 && finished? <div className={styles.info}>{hero.name}</div>: <></>}
             </div>
         )
