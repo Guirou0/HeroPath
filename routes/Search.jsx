@@ -5,7 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
-
 const Search = () => {
     const [results, setResults] = useState(null);
     const {key} = useContext(AuthContext);
@@ -17,7 +16,7 @@ const Search = () => {
             navigate("/");
         }
         setResults(null)
-        axios.get(`http://localhost:/search?param=${name}`, {
+        axios.get(`${import.meta.env.VITE_API}/search?param=${name}`, {
             headers: {
                 key: key
             }

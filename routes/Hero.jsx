@@ -22,7 +22,7 @@ const Hero = () => {
             navigate("/");
         }
 
-        axios.get(`http://localhost:?param=${id}`, {
+        axios.get(`${import.meta.env.VITE_API}?param=${id}`, {
             headers: {
                 key: key
             }

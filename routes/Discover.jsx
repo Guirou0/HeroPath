@@ -40,7 +40,7 @@ const Discover = () => {
 
         const newHeroes = randomheroes(7);
         const promises = newHeroes.map((hero) => {
-            return axios.get(`http://localhost:/image?param=${hero}`, {
+            return axios.get(`${import.meta.env.VITE_API}/image?param=${hero}`, {
                 headers: {
                     key: key
                 }
@@ -53,7 +53,7 @@ const Discover = () => {
                 setHeroes(i)
                 const interval = setInterval(() => {
                     const nH = [i[1], i[2], i[3], i[4], i[5], i[6], i[0]]
-                    console.log(nH)
+                    
                     i = nH;
                     setHeroes(i);
                 }, 2000)

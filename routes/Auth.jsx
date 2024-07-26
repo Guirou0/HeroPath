@@ -17,7 +17,7 @@ const Auth = () => {
     return (
         <div className={styles.auth}>
             <div className={styles.metropolis}>
-                <img alt="Superman" src="../src/assets/superman.png" className={styles.superman} />
+                <img alt="Superman" src="../assets/superman.png" className={styles.superman} />
             </div>
             <div className={styles.keycontent}>
                 <h1>Calma aí, paizão...</h1>

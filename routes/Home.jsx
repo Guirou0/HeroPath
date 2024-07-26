@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import styles from '../modules/home.module.css';
-import { Bounce, toast } from "react-toastify";
+
 import axios from 'axios'
 
 const Home = () => {
@@ -33,7 +33,7 @@ const Home = () => {
         }
         const heroes = randomheroes(8)
         const promises = heroes.map((hero) => {
-            return axios.get(`http://localhost:/image?param=${hero}`, {
+            return axios.get(`${import.meta.env.VITE_API}/image?param=${hero}`, {
                 headers : {
                     key: key
                 }

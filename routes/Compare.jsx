@@ -5,7 +5,7 @@ import axios from "axios";
 import styles from '../modules/compare.module.css'
 import Status from '../componentes/Status.jsx'
 
-const url = "http://localhost:"
+const url = import.meta.env.VITE_API
 
 const Compare = () => {
     const [results1, setResults1] = useState(null)
